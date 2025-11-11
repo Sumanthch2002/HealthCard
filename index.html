@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="transition-colors duration-300">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,134 +9,146 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
   />
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
 </head>
-<body class="bg-gray-50 text-gray-800">
+
+<body class="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-500">
+
   <div class="flex">
-    <aside class="fixed top-0 left-0 h-screen w-60 bg-teal-100 p-6 shadow-md">
-      <h2 class="text-2xl font-bold mb-8">HealthTrack</h2>
+    <aside class="fixed top-0 left-0 h-screen w-60 bg-white dark:bg-gray-800 p-6 shadow-md transition-all">
+      <h2 class="text-2xl font-bold mb-8 text-teal-600 dark:text-teal-400">HealthTrack</h2>
       <nav>
         <ul class="space-y-5">
-          <li><a href="#overview" class="flex items-center gap-3 hover:text-teal-600"><i class="fas fa-home"></i> Overview</a></li>
-          <li><a href="#appointments" class="flex items-center gap-3 hover:text-teal-600"><i class="fas fa-calendar-check"></i> Appointments</a></li>
-          <li><a href="#prescriptions" class="flex items-center gap-3 hover:text-teal-600"><i class="fas fa-pills"></i> Prescriptions</a></li>
-          <li><a href="#reports" class="flex items-center gap-3 hover:text-teal-600"><i class="fas fa-file-medical"></i> Reports</a></li>
-          <li><a href="#settings" class="flex items-center gap-3 hover:text-teal-600"><i class="fas fa-cog"></i> Settings</a></li>
-          <li><a href="#profile" class="flex items-center gap-3 hover:text-teal-600"><i class="fas fa-user"></i> Patient Profile</a></li>
+          <li><a href="#overview" class="flex items-center gap-3 hover:text-teal-600 dark:hover:text-teal-400"><i class="fas fa-home"></i> Overview</a></li>
+          <li><a href="#appointments" class="flex items-center gap-3 hover:text-teal-600 dark:hover:text-teal-400"><i class="fas fa-calendar-check"></i> Appointments</a></li>
+          <li><a href="#prescriptions" class="flex items-center gap-3 hover:text-teal-600 dark:hover:text-teal-400"><i class="fas fa-pills"></i> Prescriptions</a></li>
+          <li><a href="#reports" class="flex items-center gap-3 hover:text-teal-600 dark:hover:text-teal-400"><i class="fas fa-file-medical"></i> Reports</a></li>
+          <li><a href="#settings" class="flex items-center gap-3 hover:text-teal-600 dark:hover:text-teal-400"><i class="fas fa-cog"></i> Settings</a></li>
+          <li><a href="#profile" class="flex items-center gap-3 hover:text-teal-600 dark:hover:text-teal-400"><i class="fas fa-user"></i> Patient Profile</a></li>
         </ul>
       </nav>
     </aside>
-    <main class="ml-60 flex-1">
-      <header class="flex justify-between items-center bg-white shadow p-4 sticky top-0 z-10">
+
+    <main class="ml-60 flex-1 transition-all">
+      <header class="flex justify-between items-center bg-white dark:bg-gray-800 shadow p-4 sticky top-0 z-10">
         <div class="flex items-center gap-4">
           <img
             src="https://randomuser.me/api/portraits/women/65.jpg"
             alt="Patient"
-            class="w-12 h-12 rounded-full border"
+            class="w-12 h-12 rounded-full border border-gray-300 dark:border-gray-600"
           />
           <div>
-            <h3 class="font-semibold">Sarah Johnson</h3>
-            <p class="text-sm text-gray-600">Age: 28 | Female</p>
+            <h3 class="font-semibold text-gray-900 dark:text-gray-100">Sarah Johnson</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400">Age: 28 | Female</p>
           </div>
         </div>
-        <div>
-          <button class="relative">
-            <i class="fas fa-bell text-xl text-teal-600"></i>
-            <span class="absolute -top-1 -right-2 bg-red-500 text-white text-xs px-1 rounded-full">3</span>
-          </button>
+
+        <div class="flex items-center gap-3">
+          <i class="fas fa-sun text-yellow-400"></i>
+          <label class="relative inline-block w-14 h-7 cursor-pointer">
+            <input id="modeToggle" type="checkbox" class="sr-only peer" />
+            <div class="absolute inset-0 bg-gray-300 dark:bg-gray-600 rounded-full peer-checked:bg-gray-500 transition"></div>
+            <div class="absolute left-1 top-1 w-5 h-5 bg-white rounded-full peer-checked:translate-x-7 peer-checked:bg-teal-500 transition"></div>
+          </label>
+          <i class="fas fa-moon text-gray-400"></i>
         </div>
       </header>
 
       <div class="p-6 space-y-16">
-        <section id="overview" class="p-6 bg-white shadow rounded-lg">
+        <section id="overview" class="p-6 bg-white dark:bg-gray-800 shadow rounded-lg">
           <h2 class="text-xl font-semibold mb-4">Overview</h2>
           <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div class="p-4 bg-teal-50 shadow rounded-lg text-center">
+            <div class="p-4 bg-gray-100 dark:bg-gray-700 shadow rounded-lg text-center">
               <i class="fas fa-heartbeat text-red-500 text-2xl mb-2"></i>
               <p class="font-semibold">Heart Rate</p>
-              <p class="text-gray-600">78 bpm</p>
+              <p class="text-gray-500 dark:text-gray-300">78 bpm</p>
             </div>
-            <div class="p-4 bg-teal-50 shadow rounded-lg text-center">
+            <div class="p-4 bg-gray-100 dark:bg-gray-700 shadow rounded-lg text-center">
               <i class="fas fa-tachometer-alt text-blue-500 text-2xl mb-2"></i>
               <p class="font-semibold">Blood Pressure</p>
-              <p class="text-gray-600">120/80 mmHg</p>
+              <p class="text-gray-500 dark:text-gray-300">120/80 mmHg</p>
             </div>
-            <div class="p-4 bg-teal-50 shadow rounded-lg text-center">
+            <div class="p-4 bg-gray-100 dark:bg-gray-700 shadow rounded-lg text-center">
               <i class="fas fa-lungs text-green-500 text-2xl mb-2"></i>
               <p class="font-semibold">Oxygen Level</p>
-              <p class="text-gray-600">98%</p>
+              <p class="text-gray-500 dark:text-gray-300">98%</p>
             </div>
-            <div class="p-4 bg-teal-50 shadow rounded-lg text-center">
+            <div class="p-4 bg-gray-100 dark:bg-gray-700 shadow rounded-lg text-center">
               <i class="fas fa-weight text-purple-500 text-2xl mb-2"></i>
               <p class="font-semibold">BMI</p>
-              <p class="text-gray-600">22.4</p>
+              <p class="text-gray-500 dark:text-gray-300">22.4</p>
             </div>
           </div>
         </section>
-        <section id="appointments" class="p-6 bg-white shadow rounded-lg">
-          <h2 class="text-xl font-semibold mb-4">Appointments</h2>
-          <table class="w-full border-collapse">
-            <thead>
-              <tr class="bg-teal-50">
-                <th class="p-2 border">Date</th>
-                <th class="p-2 border">Doctor</th>
-                <th class="p-2 border">Department</th>
-                <th class="p-2 border">Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="p-2 border">2025-09-05</td>
-                <td class="p-2 border">Dr. Smith</td>
-                <td class="p-2 border">Cardiology</td>
-                <td class="p-2 border text-green-600">Confirmed</td>
-              </tr>
-              <tr>
-                <td class="p-2 border">2025-09-10</td>
-                <td class="p-2 border">Dr. Allen</td>
-                <td class="p-2 border">General</td>
-                <td class="p-2 border text-yellow-600">Pending</td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
-        <section id="prescriptions" class="p-6 bg-white shadow rounded-lg">
+
+        <section id="prescriptions" class="p-6 bg-white dark:bg-gray-800 shadow rounded-lg">
           <h2 class="text-xl font-semibold mb-4">Prescriptions</h2>
           <ul class="space-y-3">
-            <li class="p-3 bg-teal-50 rounded shadow flex justify-between">
+            <li class="p-3 bg-gray-100 dark:bg-gray-700 rounded shadow flex justify-between">
               <span>Aspirin 75mg - 1/day</span>
-              <span class="text-gray-600">Dr. Smith (2 weeks)</span>
+              <span class="text-gray-500 dark:text-gray-300">Dr. Smith (2 weeks)</span>
             </li>
-            <li class="p-3 bg-teal-50 rounded shadow flex justify-between">
+            <li class="p-3 bg-gray-100 dark:bg-gray-700 rounded shadow flex justify-between">
               <span>Vitamin D - 1/week</span>
-              <span class="text-gray-600">Dr. Allen (1 month)</span>
+              <span class="text-gray-500 dark:text-gray-300">Dr. Allen (1 month)</span>
             </li>
           </ul>
           <div class="mt-4 flex gap-4">
-            <button class="px-4 py-2 bg-teal-600 text-white rounded-lg shadow hover:bg-teal-700 flex items-center gap-2">
+            <a href="./assets/prescriptions.pdf" download class="px-4 py-2 bg-teal-600 text-white rounded-lg shadow hover:bg-teal-700 flex items-center gap-2">
               <i class="fas fa-file-pdf"></i> Download PDF
-            </button>
-            <button class="px-4 py-2 bg-gray-600 text-white rounded-lg shadow hover:bg-gray-700 flex items-center gap-2">
+            </a>
+            <a href="./assets/prescriptions.csv" download class="px-4 py-2 bg-gray-600 text-white rounded-lg shadow hover:bg-gray-700 flex items-center gap-2">
               <i class="fas fa-file-csv"></i> Download CSV
-            </button>
+            </a>
           </div>
         </section>
-        <section id="reports" class="p-6 bg-white shadow rounded-lg">
+
+        <section id="reports" class="p-6 bg-white dark:bg-gray-800 shadow rounded-lg">
           <h2 class="text-xl font-semibold mb-4">Reports</h2>
-          <p class="mb-4">Latest blood test and X-ray reports are available for download.</p>
+          <p class="mb-4 text-gray-500 dark:text-gray-300">Latest blood test and X-ray reports are available for download.</p>
           <div class="flex gap-4">
-            <button class="px-4 py-2 bg-teal-600 text-white rounded-lg shadow hover:bg-teal-700 flex items-center gap-2">
+            <a href="./assets/reports.pdf" download class="px-4 py-2 bg-teal-600 text-white rounded-lg shadow hover:bg-teal-700 flex items-center gap-2">
               <i class="fas fa-file-pdf"></i> Download PDF
-            </button>
-            <button class="px-4 py-2 bg-gray-600 text-white rounded-lg shadow hover:bg-gray-700 flex items-center gap-2">
+            </a>
+            <a href="./assets/reports.csv" download class="px-4 py-2 bg-gray-600 text-white rounded-lg shadow hover:bg-gray-700 flex items-center gap-2">
               <i class="fas fa-file-csv"></i> Download CSV
-            </button>
+            </a>
           </div>
         </section>
-        <section id="settings" class="p-6 bg-white shadow rounded-lg">
+
+        <section id="settings" class="p-6 bg-white dark:bg-gray-800 shadow rounded-lg">
           <h2 class="text-xl font-semibold mb-4">Settings</h2>
-          <p>Change password, update email, and manage notification preferences.</p>
+
+          <div class="space-y-6">
+            <div>
+              <h3 class="font-semibold text-teal-600 dark:text-teal-400 mb-2">Account</h3>
+              <p class="text-gray-500 dark:text-gray-300 mb-2">Update email, password, and personal details.</p>
+              <button class="px-4 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700">Edit Profile</button>
+            </div>
+
+            <div>
+              <h3 class="font-semibold text-teal-600 dark:text-teal-400 mb-2">Notifications</h3>
+              <p class="text-gray-500 dark:text-gray-300 mb-2">Choose how you receive alerts.</p>
+              <div class="flex gap-4">
+                <label><input type="checkbox" class="accent-teal-600" checked> Email</label>
+                <label><input type="checkbox" class="accent-teal-600" checked> SMS</label>
+                <label><input type="checkbox" class="accent-teal-600"> Push</label>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="font-semibold text-teal-600 dark:text-teal-400 mb-2">Appearance</h3>
+              <p class="text-gray-500 dark:text-gray-300 mb-2">Toggle between Light and Dark Mode.</p>
+              <p class="text-sm text-gray-400">Use the switch on the top-right corner.</p>
+            </div>
+          </div>
         </section>
-        <section id="profile" class="p-6 bg-white shadow rounded-lg">
+
+        <section id="profile" class="p-6 bg-white dark:bg-gray-800 shadow rounded-lg">
           <h2 class="text-xl font-semibold mb-4">Patient Profile</h2>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
@@ -154,5 +166,11 @@
       </div>
     </main>
   </div>
+
+  <script>
+    document.getElementById("modeToggle").addEventListener("change", function() {
+      document.documentElement.classList.toggle("dark");
+    });
+  </script>
 </body>
 </html>
